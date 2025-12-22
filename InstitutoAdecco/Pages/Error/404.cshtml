@@ -1,0 +1,20 @@
+﻿@page
+@model InstitutoAdecco.Pages.Error._404Model
+@{
+    ViewData["Title"] = "404";
+}
+
+<div class="g-0 mb-5 top-margin-fix terms-conditions">
+    <main id="main" class="site-main" role="main">
+        <article id="primary" class="page type-page status-publish hentry">
+            <header class="entry-header">
+                <h1 class="entry-title">
+                    Error 404: @R["The page you are looking for cannot be found."]
+                </h1>
+            </header>
+            <div>
+                @R["Original Request"]: @Model.OriginalPathAndQuery
+            </div>
+        </article>
+    </main>
+</div>
