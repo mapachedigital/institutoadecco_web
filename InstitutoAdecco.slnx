@@ -1,3 +1,6 @@
 <Solution>
   <Project Path="InstitutoAdecco/InstitutoAdecco.csproj" />
+  <Project Path="MDWidgets/MDMessaging/MDMessaging.csproj" />
+  <Project Path="MDWidgets/MDWidgets/MDWidgets.csproj" />
+  <Project Path="SqliteMigrations/SqliteMigrations.csproj" />
 </Solution>
