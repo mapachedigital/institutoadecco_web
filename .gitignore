@@ -361,3 +361,12 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+/InstitutoAdecco_Uploads
+/InstitutoAdecco/institutoadecco.db
+/InstitutoAdecco/institutoadecco.db-shm
+/InstitutoAdecco/institutoadecco.db-wal
+/.vscode
+/InstitutoAdecco/mdmessaging.db
+/InstitutoAdecco/mdmessaging.db-shm
+/InstitutoAdecco/mdmessaging.db-wal
