@@ -8,6 +8,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="institutoadecco.db" />
+    <None Remove="institutoadecco.db-shm" />
+    <None Remove="institutoadecco.db-wal" />
+    <None Remove="mdmessaging.db" />
+    <None Remove="mdmessaging.db-shm" />
+    <None Remove="mdmessaging.db-wal" />
+  </ItemGroup>
+
+  <ItemGroup>
 	<PackageReference Include="Azure.Storage.Blobs" Version="12.26.0" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="10.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="10.0.1" />
