@@ -1,0 +1,3 @@
+[submodule "MDWidgets"]
+	path = MDWidgets
+	url = https://github.com/mapachedigital/mdwidgets.git
