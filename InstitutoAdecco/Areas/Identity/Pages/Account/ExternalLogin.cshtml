@@ -1,0 +1,53 @@
+﻿@page
+@model ExternalLoginModel
+@{
+    ViewData["Title"] = P["Register"];
+}
+
+<div class="container mt-5">
+    <h1>@ViewData["Title"]</h1>
+    <h2 id="external-login-title">@P["Associate your {0} account.", Model.ProviderDisplayName]</h2>
+    <hr />
+
+    <p id="external-login-description" class="text-info">
+        @P["You've successfully authenticated with <strong>{0}</strong>.", Model.ProviderDisplayName]
+        @P["Please enter an email address for this site below and click the Register button to finish logging in."]
+    </p>
+
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-page-handler="Confirmation" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+                <div class="form-floating mb-3">
+                    <input asp-for="Input.Email" class="form-control" autocomplete="email" placeholder="@P["Please enter your email."]" />
+                    <label asp-for="Input.Email" class="form-label"></label>
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                </div>
+                <div class="form-floating mb-3">
+                    <input asp-for="Input.Company" class="form-control" aria-required="true" placeholder="@P["Company"]" />
+                    <label asp-for="Input.Company"></label>
+                    <span asp-validation-for="Input.Company" class="text-danger"></span>
+                </div>
+                <div class="checkbox mb-3">
+                    <p><a asp-page="/AvisoDePrivacidad">@P["See the privacy policy"]</a></p>
+                    <label asp-for="Input.AcceptTermsOfService" class="form-label">
+                        <input class="form-check-input" asp-for="Input.AcceptTermsOfService" />
+                        @Html.DisplayNameFor(m => m.Input.AcceptTermsOfService)
+                    </label>
+                    <p><span asp-validation-for="Input.AcceptTermsOfService" class="text-danger"></span></p>
+                </div>
+                <button type="submit" class="w-100 btn btn-lg btn-primary">@P["Register"]</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        jQuery(document).ready(function () {
+            jQuery('#Input_AcceptUsageOfLogo').rules("add", "required");
+            jQuery('#Input_AcceptTermsOfService').rules("add", "required");
+        });
+    </script>
+}

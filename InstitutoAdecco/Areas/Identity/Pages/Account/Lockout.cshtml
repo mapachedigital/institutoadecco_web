@@ -1,0 +1,13 @@
+﻿@page
+@model LockoutModel
+@{
+    ViewData["Title"] = P["Locked out"];
+}
+
+<div class="container mt-5">
+    <header class="text-center my-md-5 py-md-5">
+        <img src="~/images/shield.png" />
+        <h1 class="text-danger">@ViewData["Title"]</h1>
+        <p class="text-danger">@P["This account has been locked out, please try again later."]</p>
+    </header>
+</div>

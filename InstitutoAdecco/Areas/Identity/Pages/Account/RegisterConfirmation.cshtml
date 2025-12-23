@@ -1,0 +1,24 @@
+﻿@page
+@model RegisterConfirmationModel
+@{
+    ViewData["Title"] = P["Register confirmation"];
+}
+
+<div class="container mt-5">
+    <h1>@ViewData["Title"]</h1>
+    @{
+        if (@Model.DisplayConfirmAccountLink)
+        {
+            <p>
+                @P["This app does not currently have a real email sender registered, see <a href=\"https://aka.ms/aspaccountconf\">these docs</a> for how to configure a real email sender."]
+                @P["Normally this would be emailed: <a id=\"confirm-link\" href=\"{0}\">Click here to confirm your account</a>", Model.EmailConfirmationUrl]
+            </p>
+        }
+        else
+        {
+            <p>
+                @P["Please check your email to confirm your account."]
+            </p>
+        }
+    }
+</div>

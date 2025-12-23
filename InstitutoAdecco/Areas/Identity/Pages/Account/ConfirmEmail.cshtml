@@ -1,0 +1,22 @@
+﻿@page
+@model ConfirmEmailModel
+@{
+    ViewData["Title"] = P["Confirm email"];
+}
+
+<div class="container mt-5">
+    <h1>@ViewData["Title"]</h1>
+    <partial name="_StatusMessage" model="Model.StatusMessage" />
+</div>
+
+@section Scripts {
+    @if (Model.Success)
+    {
+        <script>
+            var returnUrl = '@Model.ReturnUrl';
+            if (returnUrl) {
+                setTimeout(function() { window.location.href = returnUrl; }, 3000);
+            }
+        </script>
+    }
+}
