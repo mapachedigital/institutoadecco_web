@@ -1,0 +1,26 @@
+﻿@using Microsoft.AspNetCore.Http.Features
+
+@{
+    var consentFeature = Context.Features.Get<ITrackingConsentFeature>();
+    var showBanner = !consentFeature?.CanTrack ?? false;
+    var cookieString = consentFeature?.CreateConsentCookie();
+}
+
+@if (showBanner)
+{
+    <div id="cookieConsent">
+        @R["Grupo Adecco uses cookies to provide you with a better experience."]
+        <a class="cookiePrivacy" asp-page="/AvisoDePrivacidad">@R["Read Privacy Notice"]</a>
+        <a class="cookieButton" role="button" data-cookie-string="@cookieString">@R["I accept"]</a>
+    </div>
+    <script>
+        (function () {
+            var button = document.querySelector("#cookieConsent a[data-cookie-string]");
+            button.addEventListener("click", function (event) {
+                document.cookie = button.dataset.cookieString;
+                var consentBanner = document.getElementById("cookieConsent");
+                consentBanner.style.display = "none";
+            }, false);
+        })();
+    </script>
+}
