@@ -20,6 +20,8 @@ public class Globals
     public const string ConfigSuperAdminPhoneNumber = "SuperAdmin:PhoneNumber";
     public const string ConfigSuperAdminPassword = "SuperAdmin:Password";
 
+    public const string GoogleTagManagerCode = "GTM-TH6H2SNV";
+
     public const string StorageContainerNameAttachments = "attachments";
 
     public const int DefaultPageSize = 9;

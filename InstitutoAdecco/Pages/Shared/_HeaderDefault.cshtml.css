@@ -1,0 +1,50 @@
+﻿.overhead {
+    background-color: #231F20;
+    height: 38px;
+    font-family: 'Archer book', sans-serif;
+}
+
+.page-center {
+    max-width: var(--max-width);
+}
+
+
+.menu-left li {
+    list-style-type: none;
+}
+
+#navbar-top {
+    border-bottom: 1px solid #eee;
+    background: #fff;
+}
+
+    #navbar-top > .container {
+        max-width: var(--max-width);
+    }
+
+    #navbar-top li {
+        padding: 4px 10px;
+    }
+
+@media (max-width: 988px) {
+    .navbar-nav {
+        margin: 0;
+    }
+
+    .navbar-nav li {
+        margin-left: 0;
+        border-bottom: 1px solid #eee;
+    }
+
+        .navbar-nav li br {
+            display: none;
+        }
+
+        .navbar-nav li:first-child {
+            border-top: 1px solid #eee;
+        }
+
+        .navbar-nav li:last-child {
+            border-bottom: 0px solid transparent;
+        }
+}

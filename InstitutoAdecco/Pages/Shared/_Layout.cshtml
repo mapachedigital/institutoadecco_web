@@ -8,6 +8,20 @@
 
     <script type="importmap"></script>
 
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','@Globals.GoogleTagManagerCode');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Favicon and Touch Icons -->
+    <link rel="shortcut icon" href="~/images/favicon/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon-precomposed" sizes="48x28" href="~/images/favicon/apple-touch-icon.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="~/images/favicon/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="~/images/favicon/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="~/images/favicon/android-chrome-256x256.png" sizes="256x256" />
+    <link rel="icon" type="image/png" href="~/images/favicon/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="~/images/favicon/favicon-16x16.png" sizes="16x16" />
+    <!-- End Favicon and Touch Icons -->
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" />
 
@@ -18,39 +32,24 @@
     @await Component.InvokeAsync("Seo", ViewData["SeoInfo"])
 </head>
 <body>
+    <noscript>
+        <!-- Google Tag Manager (noscript) -->
+        <iframe src="https://www.googletagmanager.com/ns.html?id=@(Globals.GoogleTagManagerCode)" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">InstitutoAdecco</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                    <partial name="_LoginPartial" />
-                </div>
-            </div>
-        </nav>
+        <partial name="~/Areas/Admin/Views/Shared/_AdminBarPartial.cshtml" />
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
+
+    <partial name="_HeaderDefault" />
+
+    <div class="container main-site">
+        <main role="main">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2025 - InstitutoAdecco - <a asp-area="" asp-page="/Privacy">Privacy</a>
-        </div>
-    </footer>
+    <partial name="_FooterPartial" />
     <partial name="_CookieConsentPartial" />
 
     <!-- Scripts -->

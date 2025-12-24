@@ -1,0 +1,32 @@
+﻿
+<div class="overhead">
+    <div class="container page-center h-100">
+        <ul class="d-flex justify-content-end gap-3 align-items-center links-header menu-left h-100">
+            <li><a href="https://adecco.com.mx/adecco-mexico/" target="_blank">Sobre nosotros</a> </li>
+            <li><a asp-page="/Contacto">Contacto</a></li>
+        </ul>
+    </div>
+</div>
+
+<nav id="navbar-top" class="navbar navbar-expand-md navbar-light">
+    <div class="container">
+        <a class="navbar-brand" asp-page="/Index">
+            <img class="main-logo-img" src="~/images/theadeccogroup-institute-80.png" alt="Instituto Adecco" />
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#Principal" aria-controls="Principal" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse flex-grow-0" id="Principal">
+            <ul id="menu-principal" class="navbar-nav">
+                <li class="nav-item"><a asp-page="/Categoria" asp-route-name="empleo" class="nav-link ">Empleo <br /> formal</a></li>
+                <li class="nav-item"><a asp-page="/Categoria" asp-route-name="salud" class="nav-link ">Salud <br />ocupacional</a></li>
+                <li class="nav-item"><a asp-page="/Categoria" asp-route-name="diversidad" class="nav-link ">Diversidad e <br />igualdad</a></li>
+                <li class="nav-item"><a asp-page="/Categoria" asp-route-name="talento" class="nav-link ">Talento y <br /> formación</a></li>
+                <li class="nav-item"><a asp-page="/Categoria" asp-route-name="tendencias" class="nav-link ">Tendencias del <br />futuro del trabajo</a></li>
+                <li class="nav-item"><a asp-page="/Categoria" asp-route-name="estudios" class="nav-link ">Estudios e<br /> investigaciones</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>

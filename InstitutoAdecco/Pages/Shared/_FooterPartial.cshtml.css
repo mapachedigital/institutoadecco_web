@@ -1,0 +1,12 @@
+﻿.site-footer {
+    background-color: #231F20;
+    padding: 30px 0 20px 0;
+    font-family: "Archer book", sans-serif !important;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.page-center {
+    max-width: var(--max-width);
+}

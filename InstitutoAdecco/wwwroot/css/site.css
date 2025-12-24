@@ -29,3 +29,71 @@ body {
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
   text-align: start;
 }
+
+@font-face {
+    font-family: 'Archer book';
+    src: url('/fonts/Archer-Book.otf');
+}
+
+@font-face {
+    font-family: 'Archer bold';
+    src: url('/fonts/Archer-Bold.otf');
+}
+
+@font-face {
+    font-family: 'lust rg';
+    src: url('/fonts/Lust-Rg.woff');
+}
+
+@font-face {
+    font-family: 'Neutra Display Thin Alt';
+    src: url('/fonts/NeutraDisplay-Medium.woff');
+}
+
+html {
+    --max-width: 1180px;
+}
+
+/* Header and footer */
+.links-header a:link,
+.links-header a:visited,
+.links-footer a:link,
+.links-footer a:visited {
+    color: #fff;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.links-header a:hover,
+.links-footer a:hover {
+    color: #5cb8b2;
+}
+
+.links-footer > :first-child {
+    margin-left: 8px;
+}
+
+.main-logo-img {
+    height: 56px;
+}
+
+#navbar-top li .nav-link {
+    border-left: 1px solid #5CB8B2;
+    font-family: 'Neutra Display Thin Alt', sans-serif !important;
+    text-transform: uppercase;
+    font-size: 13px;
+    color: #333;
+    padding-left: 10px;
+}
+
+@media (max-width: 988px) {
+    #navbar-top li .nav-link {
+        border-left: 0px solid transparent;
+        margin-left: 0;
+        padding-left: 0;
+    }
+}
+
+.site-footer a {
+    margin: 0 15px;
+}
