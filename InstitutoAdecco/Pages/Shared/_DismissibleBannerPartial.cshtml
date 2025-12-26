@@ -50,7 +50,7 @@
                     var bannerId = document.getElementById("siteDismissibleBanner").querySelector(".dialog-content").getAttribute("data-banner-id") || "";
                     
                     // Persist dismissal for a number of days (0 = session cookie)
-                    //setCookie(encodeURIComponent("BannerDismissed" + bannerId), "1", 0);
+                    setCookie(encodeURIComponent("BannerDismissed" + bannerId), "1", 0);
                     
                     var banner = document.getElementById("siteDismissibleBanner");
                     if (banner) banner.style.display = "none";
