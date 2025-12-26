@@ -1,34 +1,36 @@
+/* .NET styles... review! */
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
 }
 
 .form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
-  color: var(--bs-secondary-color);
-  text-align: end;
+    color: var(--bs-secondary-color);
+    text-align: end;
 }
 
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
-  text-align: start;
+    text-align: start;
 }
+/* END .NET styles... review! */
 
 @font-face {
     font-family: 'Archer book';
@@ -96,4 +98,92 @@ html {
 
 .site-footer a {
     margin: 0 15px;
+}
+
+.main-site {
+    max-width: var(--max-width);
+    font-family: 'Archer book', sans-serif;
+    color: #404040;
+}
+
+    .main-site h1 {
+        margin-top: 0.67em;
+        margin-bottom: 0.67em;
+    }
+
+    .main-site a:link,
+    .main-site a:visited {
+        color: #1a1a1a;
+        text-decoration: none;
+    }
+
+    .main-site a:hover {
+        color: #5cb8b2;
+    }
+
+.entry-title {
+    font-family: 'lust rg', serif;
+    text-align: center;
+    max-width: 80%;
+    padding-top: 75px;
+    color: #222;
+    line-height: 50px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.main-site h1:after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 90px;
+    margin: 10px auto;
+    background: #5CB8B2;
+}
+
+.entry-content p {
+    font-size: clamp(1rem, 5vw, 1.3rem);
+    color: #000 !important;
+}
+
+.entry-content ol {
+    margin: 2em 0;
+    margin-left: 30px;
+    padding: 0;
+    font-size: clamp(1rem, 5vw, 1.3rem);
+}
+
+.entry-content li {
+    margin-bottom: 0.5em;
+    margin-left: 10px;
+}
+
+.white {
+    color: #fff;
+}
+
+.btn-branches, .btn-branches:visited {
+    max-width: 467px;
+    width: 90%;
+    margin: 12px auto 0;
+    background: #56BAB7;
+    color: #fff !important;
+    display: block;
+    font-size: 21px;
+    padding: 7px 0;
+    text-align: center;
+    border-radius: 50px;
+}
+
+    .btn-branches:hover {
+        background: #1f6e6c;
+    }
+
+#cookieConsent .cookiePrivacy {
+    font-weight: 550;
+    margin: 0px 20px 0px 15px;
+    color: rgb(68,68,68);
+    text-decoration: none;
 }

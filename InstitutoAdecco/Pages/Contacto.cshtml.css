@@ -1,0 +1,37 @@
+﻿.contactTop {
+    background-image: url('/images/contact-us.jpeg');
+    background-size: cover;
+}
+
+    .contactTop .row {
+        padding: 65px 0;
+    }
+
+    .contactTop h1 {
+        font-size: 2em;
+    }
+
+
+.contactMain {
+    max-width: var(--max-width);
+}
+
+    .contactMain .row {
+        padding: 65px 0;
+    }
+
+hr {
+    width: 100px;
+    background-color: #ccc;
+    border: 0;
+    margin: 35px 0 1.5em;
+    height: 1px;
+}
+
+.a3a3a3 {
+    color: #a3a3a3;
+}
+
+.button-row {
+    width: 90%;
+}

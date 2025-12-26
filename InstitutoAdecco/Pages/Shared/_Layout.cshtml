@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" />
 
     <!-- Site CSS -->
+    <link rel="stylesheet" href="~/css/already-visible.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/InstitutoAdecco.styles.css" asp-append-version="true" />
 
@@ -43,11 +44,23 @@
 
     <partial name="_HeaderDefault" />
 
-    <div class="container main-site">
-        <main role="main">
+    <!-- Dismissible site-wide banner -->
+    <partial name="_DismissibleBannerPartial" />
+
+    @if (ViewBag.Template == "Contact")
+    {
+        <div class="main-site main-site-contact">
             @RenderBody()
-        </main>
-    </div>
+        </div>
+    }
+    else
+    {
+        <div class="container main-site">
+            <main role="main">
+                @RenderBody()
+            </main>
+        </div>
+    }
 
     <partial name="_FooterPartial" />
     <partial name="_CookieConsentPartial" />
@@ -55,6 +68,7 @@
     <!-- Scripts -->
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/already-visible.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
 
     @await RenderSectionAsync("Scripts", required: false)

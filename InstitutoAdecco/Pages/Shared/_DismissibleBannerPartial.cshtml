@@ -1,0 +1,68 @@
+@{
+    var bannerId = "cv_maker";
+    var dismissed = System.Net.WebUtility.UrlDecode(Context.Request.Cookies["BannerDismissed" + bannerId]);
+    var bannerLink = "https://cvmaker.adecco.com/es-mx";
+    var bannerImage = "/images/cv_maker.jpg";
+    var bannerDescription = "CV Maker - Crea tu CV en pocos minutos ¡Totalmente gratis!";
+}
+
+@if (String.IsNullOrEmpty(dismissed))
+{
+    <style>
+        #siteDismissibleBanner img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+    <div id="siteDismissibleBanner" class="dialog-background" role="dialog">
+        <div class="dialog">
+            <div class="dialog-content" data-banner-id="@bannerId">
+                <a class="d-table-cell" href="@bannerLink" target="_blank">
+                    <img decoding="async" src="@bannerImage" alt="@bannerDescription" height="300">
+                </a>
+            </div>
+            <div id="dismissBannerBtn" class="dialog-close">X</div>
+        </div>
+    </div>
+    <script>
+        /**
+            * Sets a cookie with the specified name, value, and expiration in days.
+            * @@param {int} days Sets an expiration date for the cookie. If omitted, the cookie becomes a session cookie.
+            * @@param {string} name The name of the cookie.
+            * @@param {string} value The value of the cookie.
+            */
+        function setCookie(name, value, days) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "") + expires + "; path=/; SameSite=Lax";
+        }
+
+        (function () {
+            var btn = document.getElementById("dismissBannerBtn");
+            var bannerBackground = document.getElementById("siteDismissibleBanner");
+
+            if (btn) {
+                btn.addEventListener("click", function () {
+                    var bannerId = document.getElementById("siteDismissibleBanner").querySelector(".dialog-content").getAttribute("data-banner-id") || "";
+                    
+                    // Persist dismissal for a number of days (0 = session cookie)
+                    //setCookie(encodeURIComponent("BannerDismissed" + bannerId), "1", 0);
+                    
+                    var banner = document.getElementById("siteDismissibleBanner");
+                    if (banner) banner.style.display = "none";
+                }, false);
+            }
+
+            if (bannerBackground){
+                bannerBackground.addEventListener("click", function (event) {
+                    var banner = document.getElementById("siteDismissibleBanner");
+                    if (banner) banner.style.display = "none";
+                }, false);
+            }
+        })();
+    </script>
+}

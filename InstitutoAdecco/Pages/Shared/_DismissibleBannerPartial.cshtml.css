@@ -1,0 +1,37 @@
+﻿.dialog-background {
+    cursor: pointer;
+    background-color: rgba(10,10,10,0.8);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: 1.5s ease-in-out;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dialog {
+    width: 60%;
+    padding: 18px;
+    background-color: rgba(249,249,249,1);
+    position: absolute;
+}
+
+.dialog-content {
+    text-align: center;
+}
+
+.dialog-close {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    padding: 8px;
+    color: white;
+    font-size: 12px;
+    line-height: 36px;
+    box-shadow: 1px 1px 3px 0px rgba(2,2,2,0.23);
+    background-color: rgba(0,183,205,1);
+    cursor: pointer;
+}
