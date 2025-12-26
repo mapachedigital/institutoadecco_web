@@ -1,12 +1,16 @@
 @{
+    // BEGIN: Dismissible Banner Configuration
     var bannerId = "cv_maker";
-    var dismissed = System.Net.WebUtility.UrlDecode(Context.Request.Cookies["BannerDismissed" + bannerId]);
     var bannerLink = "https://cvmaker.adecco.com/es-mx";
     var bannerImage = "/images/cv_maker.jpg";
     var bannerDescription = "CV Maker - Crea tu CV en pocos minutos ¡Totalmente gratis!";
+    // END: Dismissible Banner Configuration
+
+    var cookieName = System.Net.WebUtility.UrlEncode("MDDismissibleBanner" + bannerId);
+    var alreadyDismissed = Context.Request.Cookies[cookieName];
 }
 
-@if (String.IsNullOrEmpty(dismissed))
+@if (String.IsNullOrEmpty(alreadyDismissed))
 {
     <style>
         #siteDismissibleBanner img {
@@ -41,27 +45,27 @@
             document.cookie = name + "=" + (value || "") + expires + "; path=/; SameSite=Lax";
         }
 
+        function dismiss() {
+            var dismissableBanner = document.getElementById("siteDismissibleBanner");
+
+            if (!dismissableBanner) return;
+
+            // Persist dismissal for a number of days (0 = session cookie)
+            setCookie(encodeURIComponent("@cookieName"), "1", 0);
+
+            dismissableBanner.style.display = "none";
+        }
+
         (function () {
             var btn = document.getElementById("dismissBannerBtn");
             var bannerBackground = document.getElementById("siteDismissibleBanner");
 
             if (btn) {
-                btn.addEventListener("click", function () {
-                    var bannerId = document.getElementById("siteDismissibleBanner").querySelector(".dialog-content").getAttribute("data-banner-id") || "";
-                    
-                    // Persist dismissal for a number of days (0 = session cookie)
-                    setCookie(encodeURIComponent("BannerDismissed" + bannerId), "1", 0);
-                    
-                    var banner = document.getElementById("siteDismissibleBanner");
-                    if (banner) banner.style.display = "none";
-                }, false);
+                btn.addEventListener("click", dismiss, false);
             }
 
             if (bannerBackground){
-                bannerBackground.addEventListener("click", function (event) {
-                    var banner = document.getElementById("siteDismissibleBanner");
-                    if (banner) banner.style.display = "none";
-                }, false);
+                bannerBackground.addEventListener("click", dismiss, false);
             }
         })();
     </script>
