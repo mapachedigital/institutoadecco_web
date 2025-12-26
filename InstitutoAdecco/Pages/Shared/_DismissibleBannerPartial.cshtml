@@ -6,7 +6,7 @@
     var bannerDescription = "CV Maker - Crea tu CV en pocos minutos ¡Totalmente gratis!";
     // END: Dismissible Banner Configuration
 
-    var cookieName = System.Net.WebUtility.UrlEncode("MDDismissibleBanner" + bannerId);
+    var cookieName = System.Net.WebUtility.UrlEncode("MDDismissibleBanner-" + bannerId);
     var alreadyDismissed = Context.Request.Cookies[cookieName];
 }
 
@@ -30,11 +30,11 @@
     </div>
     <script>
         /**
-            * Sets a cookie with the specified name, value, and expiration in days.
-            * @@param {int} days Sets an expiration date for the cookie. If omitted, the cookie becomes a session cookie.
-            * @@param {string} name The name of the cookie.
-            * @@param {string} value The value of the cookie.
-            */
+         * Sets a cookie with the specified name, value, and expiration in days.
+         * @@param {int} days Sets an expiration date for the cookie. If omitted, the cookie becomes a session cookie.
+         * @@param {string} name The name of the cookie.
+         * @@param {string} value The value of the cookie.
+         */
         function setCookie(name, value, days) {
             var expires = "";
             if (days) {
@@ -51,7 +51,7 @@
             if (!dismissableBanner) return;
 
             // Persist dismissal for a number of days (0 = session cookie)
-            setCookie(encodeURIComponent("@cookieName"), "1", 0);
+            setCookie("@cookieName", "1", 0);
 
             dismissableBanner.style.display = "none";
         }
